@@ -4,7 +4,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh './build.sh'
+                nvm('v8.10.0') {
+                    sh './build.sh'
+                }
             }
         }
         stage('Package') {
